@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10131b">
+  <meta name="description" content="Dicionário de itens do GM — banco de itens de World of Warcraft Wrath of the Lich King 3.3.5a.">
+  <title>Dicionário de Itens do GM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">✦</span><span>DICIONÁRIO <b>DO GM</b></span></a>
+    <span class="version">WRATH OF THE LICH KING <i>3.3.5a</i></span>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow"><span></span> BANCO DE DADOS • WORLD OF WARCRAFT</div>
+      <h1>Dicionário de<br><em>Itens do GM</em></h1>
+      <p class="subtitle">Encontre itens pelo nome ou ID e copie o comando para adicioná-los ao personagem.</p>
+      <div class="search-panel-wrap">
+      <div class="search-panel">
+        <div class="search-input-wrap">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" type="search" placeholder="Digite o nome do item ou seu ID..." autocomplete="off">
+          <kbd>ENTER</kbd>
+        </div>
+        <button id="searchButton" class="search-button">BUSCAR <span>→</span></button>
+      </div>
+      <div id="suggestions" class="suggestions" role="listbox" aria-label="Sugestões de itens" hidden></div>
+      </div>
+      <div class="quick-row">
+        <span>BUSCAS RÁPIDAS</span>
+        <button class="chip" data-query="shadowmourne">Shadowmourne</button>
+        <button class="chip" data-query="glorenzelg">Glorenzelg</button>
+        <button class="chip" data-query="50363">ID 50363</button>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><span class="stat-icon">⌘</span><div><strong id="totalCount">0</strong><small>ITENS CARREGADOS</small></div></div>
+      <div class="stat"><span class="stat-icon">⌕</span><div><strong id="resultCount">0</strong><small>RESULTADOS</small></div></div>
+      <div class="stat"><span class="stat-icon">⚒</span><div><strong>3.3.5a</strong><small>VERSÃO DO JOGO</small></div></div>
+    </section>
+
+    <section class="results-section">
+      <div class="section-heading">
+        <div><div class="eyebrow">CATÁLOGO</div><h2>Itens encontrados</h2></div>
+        <div class="tools"><span class="api-status"><i></i> BANCO WOTLK ONLINE</span></div>
+      </div>
+      <div id="notice" class="notice">Conectando ao catálogo completo de itens WotLK...</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th class="id-col">ID</th><th>NOME DO ITEM</th><th>CATEGORIA</th><th>TIPO</th><th class="action-col">COMANDO</th></tr></thead>
+          <tbody id="resultsBody"></tbody>
+        </table>
+        <div id="emptyState" class="empty" hidden><div class="empty-symbol">⌕</div><h3>Nenhum item encontrado</h3><p>Tente pesquisar por outro nome ou ID.</p></div>
+      </div>
+      <div class="pagination"><span id="pageInfo">Mostrando 0 itens</span><div><button id="prevPage" disabled>← Anterior</button><button id="nextPage" disabled>Próxima →</button></div></div>
+    </section>
+
+    <section class="howto">
+      <div class="howto-icon">⚔</div>
+      <div><span class="eyebrow">ATALHO DE GM</span><h3>Como adicionar um item?</h3><p>Clique em <b>Copiar .add</b> na linha desejada. Depois, cole o comando no chat do jogo.</p><code>.add ID</code></div>
+    </section>
+
+    <footer><span>Feito com ⚒ por <b>GM Zuski</b></span><span>Projeto comunitário • WoW WotLK 3.3.5a</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
